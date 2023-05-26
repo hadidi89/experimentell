@@ -1,0 +1,11 @@
+.brand-products {
+    background-color: #FAFAFA;
+    height: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    @include md {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+}

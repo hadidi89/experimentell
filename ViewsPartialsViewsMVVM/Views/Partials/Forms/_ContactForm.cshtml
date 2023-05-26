@@ -1,0 +1,109 @@
+﻿@model ContactFormViewModel
+
+@*<section class="contact-form">
+    <div class="container">
+        <div class="title">Write something</div>
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div id="success-message" class="alert alert-success mb-5" style="text-align:center;">@TempData["SuccessMessage"]</div>
+        }
+        <form id="contactForm" method="post" novalidate>
+
+            <div class="line">
+                <div asp-validation-summary="ModelOnly" class="error-text"></div>
+            </div>
+
+            <div class="name form-group">
+                <label asp-for="FullName"></label>
+                <input asp-for="FullName" type="text" class="invalid" required>
+                <span asp-validation-for="FullName" class="error"></span>
+            </div>
+            <div class="email form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" type="text" class="invalid">
+                <span asp-validation-for="Email" class="error"></span>
+            </div>
+            <div class="phoneNumber form-group">
+                <label asp-for="PhoneNumber"></label>
+                <input asp-for="PhoneNumber" type="text">
+            </div>
+
+            <div class="companyName form-group">
+                <label asp-for="CompanyName"></label>
+                <input asp-for="CompanyName" type="text">
+            </div>
+            <div class="message form-group">
+                <label asp-for="Comment"></label>
+                <textarea asp-for="Comment" id="message" class="invalid"></textarea>
+                <span asp-validation-for="Comment" class="error"></span>
+            </div>
+            <div class="terms form-checkbox-group">
+                <label class="custom-checkbox">
+                    Save my name, email in the this browser for the next time I comment.
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            <button class="btn-theme">Submit</button>
+
+        </form>
+        
+    </div>
+</section>*@
+
+
+<section class="contact-form">
+    <div class="container">
+        <div class="title">Write something</div>
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div id="success-message" class="alert alert-success mb-5" style="text-align:center;">@TempData["SuccessMessage"]</div>
+        }
+        <form id="contactForm" method="post" novalidate>
+
+            <div class="line">
+                <div asp-validation-summary="ModelOnly" class="error-text"></div>
+            </div>
+
+            <div class="name form-group">
+                <label asp-for="FullName"></label>
+                <input id="FullName" asp-for="FullName" type="text" class="invalid" required>
+                <span id="fullNameError" asp-validation-for="FullName" class="error"></span>
+                <span id="contactFullNameError" class="error-text"></span>
+            </div>
+            <div class="email form-group">
+                <label asp-for="Email"></label>
+                <input id="Email" asp-for="Email" type="text" class="invalid">
+                <span id="EmailError" asp-validation-for="Email" class="error"></span>
+                <span id="contactEmailError" class="error-text"></span>
+            </div>
+            <div class="phoneNumber form-group">
+                <label asp-for="PhoneNumber"></label>
+                <input id="PhoneNumber" asp-for="PhoneNumber" type="text">
+            </div>
+
+            <div class="companyName form-group">
+                <label asp-for="CompanyName"></label>
+                <input id="CompanyName" asp-for="CompanyName" type="text">
+            </div>
+            <div class="message form-group">
+                <label asp-for="Comment"></label>
+                <textarea id="Comment" asp-for="Comment" class="invalid"></textarea>
+                <span id="commentError" asp-validation-for="Comment" class="error"></span>
+                <span id="contactCommentError" class="error-text"></span>
+            </div>
+            <div class="terms form-checkbox-group">
+                <label class="custom-checkbox">
+                    Save my name, email in this browser for the next time I comment.
+                    <input id="AcceptsTerms" type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            <button class="btn-theme">Submit</button>
+
+        </form>
+
+    </div>
+</section>

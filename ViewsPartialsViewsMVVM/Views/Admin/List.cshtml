@@ -1,0 +1,35 @@
+﻿@inject AuthService authService
+@{
+    var usersWithRoles = await authService.GetAllUsersWithRoles();
+}
+@if (usersWithRoles != null)
+{
+   <div class="user-list">
+        <div class="container">
+            <h1 style="margin-bottom: 5rem;">USERS LIST</h1>
+
+            <div class="">
+                @foreach (var user in usersWithRoles)
+                {
+                    <div class="user-row  d-flex justify-content-between">
+                        <div class="title">@user.UserName</div>
+                        <div class="title">@user.RoleName</div>
+                    </div>
+                }
+            </div>
+        </div>
+   </div>
+}
+
+<style>
+    .user-list {
+        height:850px;
+        background: linear-gradient(to right, lightgray, white);
+    }
+    .user-row {
+        padding: 10px;
+        margin-bottom: 5px;
+        background: linear-gradient(to right, lightgray, white);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+</style>

@@ -1,0 +1,88 @@
+﻿@model ProductRegisterViewModel
+
+<div class="register-product d-flex justify-content-center">
+    <div class="col-6 mt-5">
+        <h1 class="mt-5" style="text-align:center; font-style:italic;">Create Products</h1>
+        <form method="post" novalidate>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label"></label>
+                <input asp-for="Name" class="form-control"/>
+                <small><span asp-validation-for="Name" class="text-danger"></span></small>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Prise" class="form-label"></label>
+                <input asp-for="Prise" class="form-control" />
+                <small><span asp-validation-for="Prise" class="text-danger"></span></small>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Category" class="form-label"></label>
+                <input asp-for="Category" class="form-control" />
+                <small><span asp-validation-for="Category" class="text-danger"></span></small>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="LgImgUrl" class="form-label"></label>
+                <input asp-for="LgImgUrl" class="form-control" />
+                <small><span asp-validation-for="LgImgUrl" class="text-danger"></span></small>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="SmImgUrl" class="form-label"></label>
+                <input asp-for="SmImgUrl" class="form-control" />
+                <small><span asp-validation-for="SmImgUrl" class="text-danger"></span></small>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Description" class="form-label"></label>
+                <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+                <small><span asp-validation-for="Description" class="text-danger"></span></small>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Tags Options</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Options" value="New" />
+                    <label class="form-check-label my-1 ms-2">New</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Options" value="Popular" />
+                    <label class="form-check-label my-1 ms-2">Popular</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Options" value="Featured" />
+                    <label class="form-check-label my-1 ms-2">Featured</label>
+                </div>
+            </div>
+            <div class="d-grid mt-2" style="margin-bottom:25rem;">
+                <button class="btn-theme" type="submit">Create</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<style>
+    .register-product {
+        
+        background: linear-gradient(to right, lightgray, white);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-control {
+        background: linear-gradient(to right, lightgray, white);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-check-input {
+        background: linear-gradient(to right, lightgray, white);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+</style>

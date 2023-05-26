@@ -1,0 +1,60 @@
+﻿@page "/product/{id:int}"
+
+@inject ProductService productService
+@{
+    var id = Convert.ToInt32(ViewContext.RouteData.Values["id"]);
+    var product = await productService.GetAsync(id);
+}
+
+    <!-- related-product start-->
+<section class="related-product">
+    <div class="container">
+        @if (product != null )
+        {
+            <div class="product-img">
+                <img class="large-img" src="@product.LgImgUrl" alt="img-top">
+                <div class="small-img">
+                    <img class="small-img-one" src="@product.SmImgUrl" alt="img-top">
+                    <img class="small-img-tow" src="@product.SmImgUrl" alt="img-top">
+                    <img class="small-img-three" src="@product.SmImgUrl" alt="img-top">
+                    <img class="small-img-four" src="@product.SmImgUrl" alt="img-top">
+                </div>
+
+               
+            </div>
+        }
+        <div class="product-info">
+            <div class="title">@product?.Name</div>
+            <div class="info-item">@product?.Description</div>
+            <hr>
+            <div class="reviews">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <span class="text">16 Reviews</span>
+                </div>
+            </div>
+            <div class="price">@product?.Price</div>
+            <div class="add-product">
+                <div class="amount">
+                    <button class="btn-amount"><i class="fa-light fa-plus"></i></button>
+                    <label class="current-amount">2</label>
+                    <button class="btn-amount"><i class="fa-light fa-minus"></i></button>
+                </div>
+                <button class="btn-theme">Add to Cart<i class="tocart fa-regular fa-cart-plus"></i></button>
+            </div>
+            <div class="circle">
+                <i class="fa-solid fa-circle" style="color: #FA3150; font-size: 20px;"></i>
+                <i class="fa-solid fa-circle" style="color: #F9C936; font-size: 20px;"></i>
+                <i class="fa-solid fa-circle" style="color: #92B8B9; font-size: 20px;"></i>
+                <span class="colors">SKU: N/A</span>
+            </div>
+            <button class="btn-white">Add to Wishlist</button>
+            <div class="category">Category: @product?.Category</div>
+        </div>
+    </div>
+</section>
+<!-- related-product end-->

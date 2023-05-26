@@ -1,0 +1,39 @@
+﻿@inject ProductService productService
+@{
+    var products = await productService.GetAllAsync();
+}
+
+@if (products != null)
+{
+    <div class="container">
+        <h1 style="margin-bottom: 5rem;">PRODUCTS LIST</h1>
+       
+        <div class="row row-cols-1 row-cols-md-4 g-4 mt-5">
+            @foreach (var product in products)
+            {
+                <div class="col">
+                    <a asp-controller="products" asp-action="details" asp-route-id="@product.Id" class="collection-item">
+                        <img src="@product.LgImgUrl" alt="">
+                        <div class="body">
+                            <div class="title">@product.Name</div>
+                            <div class="title" style="font-size:10px;">@product.Description</div>
+                            <div class="price">@product.Category</div>
+                            <div class="info">
+                                <div class="price">$@product.Price</div>
+                                @*<div class="options">
+                                    @foreach (var tagName in product.TagNames)
+                                    {
+                                        <span class="tag">@tagName</span>
+                                    }
+                                </div>*@
+                                <i class="add-cart fa-regular fa-cart-plus"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+}
+
+

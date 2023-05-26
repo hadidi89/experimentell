@@ -1,0 +1,55 @@
+﻿@inject ProductService productService
+@{
+    var products = await productService.GetAllAsync();
+}
+
+<!-- brand products start-->
+<section class="brand-products" style="margin-top: 5rem;">
+    <div class="container">
+        <div class="row row row-cols-2 row-cols-md-3 row-cols-lg-6 g-4">
+            <div class="col">
+                <div class="card">
+                    <div class="img-holder">
+                        <img src="~/images/placeholders/200x122.svg" class="card-img-top" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="img-holder">
+                        <img src="~/images/placeholders/200x122.svg" class="card-img-top" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="img-holder">
+                        <img src="~/images/placeholders/200x122.svg" class="card-img-top" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="img-holder">
+                        <img src="~/images/placeholders/200x122.svg" class="card-img-top" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="img-holder">
+                        <img src="~/images/placeholders/200x122.svg" class="card-img-top" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="img-holder">
+                        <img src="~/images/placeholders/200x122.svg" class="card-img-top" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- brand products end-->
